@@ -62,7 +62,7 @@ public sealed class WarehouseSensorTests
     public void sensorIdNotVoid()
     {
         // Arrange
-        string? badId = null;
+        string? badId = "";
 
         // Act
         Action act = () => new WarehouseSensor(badId, "Sector1");
@@ -75,7 +75,7 @@ public sealed class WarehouseSensorTests
     public void locationTagNotVoid()
     {
         // Arrange
-        string? badId = null;
+        string? badId = "";
 
         // Act
         Action act = () => new WarehouseSensor("Test1", badId);
@@ -103,7 +103,7 @@ public sealed class WarehouseSensorTests
         // Arrange
         var sensor = new WarehouseSensor("Test1", "Sector1");
         sensor.Activate();
-        sensor.RecordReading(10.0); // triggers alert
+        sensor.RecordReading(10.0); 
 
         // Act
         sensor.Deactivate();
